@@ -1,0 +1,1 @@
+{"name":"Local: sales_by_match_hr","url":"c:\\Users\\Anmol\\.vscode\\New folder\\CP\\sales_by_match_hr.cpp","tests":[{"id":1654519264789,"input":"10\n1 1 3 1 2 1 3 3 3 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Anmol\\.vscode\\New folder\\CP\\sales_by_match_hr.cpp","group":"local","local":true}

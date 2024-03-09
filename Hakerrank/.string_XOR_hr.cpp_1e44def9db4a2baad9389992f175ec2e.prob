@@ -1,0 +1,1 @@
+{"name":"Local: string_XOR_hr","url":"c:\\Users\\Anmol\\.vscode\\New folder\\CP\\string_XOR_hr.cpp","tests":[{"id":1655296717875,"input":"10101\n00101","output":"10000"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Anmol\\.vscode\\New folder\\CP\\string_XOR_hr.cpp","group":"local","local":true}

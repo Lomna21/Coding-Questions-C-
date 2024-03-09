@@ -1,0 +1,1 @@
+{"name":"Local: question_1_cf","url":"c:\\Users\\Anmol\\.vscode\\New folder\\question_1_cf.cpp","tests":[{"id":1692286740073,"input":"4\n)(\n(()\n()\n))()","output":"YES\n(())\nYES\n()()()\nNO\nYES\n()(()())"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Anmol\\.vscode\\New folder\\question_1_cf.cpp","group":"local","local":true}

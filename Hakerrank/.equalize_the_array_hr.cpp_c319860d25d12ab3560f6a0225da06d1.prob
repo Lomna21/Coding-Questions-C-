@@ -1,0 +1,1 @@
+{"name":"Local: equalize_the_array_hr","url":"c:\\Users\\Anmol\\.vscode\\New folder\\CP\\equalize_the_array_hr.cpp","tests":[{"id":1656407785069,"input":"5\n3 3 2 1 3","output":"2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Anmol\\.vscode\\New folder\\CP\\equalize_the_array_hr.cpp","group":"local","local":true}

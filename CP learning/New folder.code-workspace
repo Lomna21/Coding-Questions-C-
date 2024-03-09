@@ -1,0 +1,17 @@
+{
+  "folders": [
+	{
+		"path": ".."
+	},
+	{
+		"path": "../../HTML"
+	}
+],
+  "settings": {
+    "files.associations": {
+      "iostream": "cpp",
+      "ostream": "cpp",
+      "random": "cpp"
+    }
+  }
+}

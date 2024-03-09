@@ -1,0 +1,1 @@
+{"name":"Local: library_fine_hr","url":"c:\\Users\\Anmol\\.vscode\\New folder\\CP\\library_fine_hr.cpp","tests":[{"id":1656399623685,"input":"5 5 2014\n23 2 2014","output":"1500"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Anmol\\.vscode\\New folder\\CP\\library_fine_hr.cpp","group":"local","local":true}
