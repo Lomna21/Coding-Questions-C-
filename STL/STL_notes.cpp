@@ -191,7 +191,7 @@ namespace raj{
     cout<<mp[5]; // 0 cause it s not present
 
     auto it = mp.find(3);  
-    cout<<*(it).second;
+    // cout<< *(it)second;
 
     auto it = mp.lower_bound(2);
     auto it = mp.upper_bound(5);
@@ -212,38 +212,131 @@ namespace raj{
     sort(a,a+n);    // [begin,end) last index is not considered
     sort(v.begin(),v.end());
     sort(a+2,a+4);
-    sort(a,a+n,greater<int>); // sorts in descending order
+    sort(a,a+n,greater<int>()); // sorts in descending order
     
     pair<int,int> a[]={{1,2},{2,1},{4,1}};
     //sort in according to second element if second is same, then sort it according to first element but in descending order
-    sort(a,a+n,comp);
-    bool comp(pair<int,int> p1, pair<int,int> p2){
-        if(p1.second<p2.second) return true;
-        if(p1.second>p2.second) return false;
-        if(p1.first>p2.first) return true; // if second are same
-        return false;
+    // If p1.second is less than p2.second, we return true.
+    // If p1.second is greater than p2.second, we return false.
+    // If p1.second is equal to p2.second, we compare the first elements of the pairs. If p1.first is less than p2.first, we return true; otherwise, we return false.
+    bool comp(pair<int,int> p1, pair<int,int> p2) {
+        if (p1.second != p2.second) {
+            return p1.second < p2.second;
+        }
+        return p1.first < p2.first;
     } 
+    sort(a,a+n,comp);
+    
 
     int num = 7;
-    int count=__builtin_popcount(); // gives the number of set bits in the number
+    int count=__builtin_popcount(num); // gives the number of set bits in the number
     long long num = 168894373290;
-    int count = __builtin_popcountll(); // for long long 
+    int count = __builtin_popcountll(num); // for long long int
 
     // FOR ALL PERMUTATIONS
     string s="123";
     // if not sorted then sort first
-    sort(s,s+n);
+    sort(s.begin(),s.end());
     do{
         cout<<s<<endl;
     }while(next_permutation(s.begin(),s.end()));
     // this will return all permutations of a string but string has to be sorted
-    
 
 
+    //--------------------------------------------------------------
 
-
-
-
-
+    // binary_search(firstIterator, lastIterator, x)
+    // returns a true or returns a false 
+    // works in log n complexity 
+    bool res = binary_search(arr, arr+n, 8); 
+    bool res = binary_search(vec.begin(), vec.end(), 8); 
+ 
+ 
+    // lower_bound function 
+    // returns an iterator pointing to the first
+    // element which is not less than x 
+    // arr[] -> {1, 5, 7, 7, 8, 10, 10, 10, 11, 11, 12} 
+    // x = 10 --> 6
+    // x = 6  --> 3
+    // x = 13 --> end() iterator
+    // this works in log N 
+    int x; 
+    int ind =  lower_bound(vec.begin(), vec.end(), x) - vec.begin(); 
+ 
+ 
+    // upper bound 
+    // returns an iterator which points to an element which is 
+    // just greater than x
+    // arr[] -> {1, 5, 7, 7, 8, 10, 10, 10, 11, 11, 12} 
+    // x = 7 
+    // x = 6 
+    // x = 12 -> end() iterator 
+    // x = 15 -> end() iterator  
+    int ind =  upper_bound(vec.begin(), vec.end(), x) - vec.begin();
+ 
+ 
+ 
+    // Q1. find me the first index where the element X lies 
+    // find function can be used but that takes O(N) times
+    // the array is sorted.. 
+ 
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int i = 0;i<n;i++) {
+    	cin >> arr[i]; 
+    }
+ 
+    int x; 
+    cin >> x; 
+ 
+    // arr[] -> {1, 5, 7, 7, 8, 10, 10, 10, 11, 11, 12} 
+    // find x = 7
+    int ind = lower_bound(arr, arr+n, x) - arr; 
+ 
+    // find x = 6 
+    int ind = lower_bound(arr, arr+n, x) - arr;
+ 
+ 
+ 
+    // There are couple of ways to do it
+    // 1st way 
+    if(binary_search(arr, arr+n, x) == true) {
+    	cout << lower_bound(arr, arr+n, x) - arr; 
+    }
+    else cout << "does not exists"; 
+ 
+ 
+    // 2nd way 
+    int ind = lower_bound(arr, arr+n, x) - arr; 
+    // arr[] -> {1, 5, 7, 7, 8, 10, 10, 10, 11, 11, 12} 
+    /////////////0  1  2  3  4  5   6   7   8   9   10 
+    // find x = 13 -> ind = 11, which is out of bound 
+    // hence arr[11] will give you runtime error 
+    if(ind != n && arr[ind] == x) {
+    	cout << "Found at: " << ind;  
+    }
+    else {
+    	cout << "Not found";
+    }
+ 
+ 
+ 
+    // Find me the last occurrence of x in an arr 
+    // arr[] -> {1, 5, 7, 7, 8, 10, 10, 10, 11, 11, 12} 
+    ///index/////0  1  2  3  4  5   6   7   8   9   10 
+ 
+    // last occurrence of x = 10, ans = 7th index
+    // last occurrence of x = 6, ans = does not exists
+    // last occurrence of x = 0, 
+    // last occurence of x = 13 
+    int ind = upper_bound(arr, arr+n, x) - arr; 
+    ind -= 1; 
+    if(ind>=0 && (arr[ind] == x)) {
+    	cout << "last occurrence: " << ind; 
+    }
+    else {
+    	cout << "Does not exists"; 
+    }
 
  }

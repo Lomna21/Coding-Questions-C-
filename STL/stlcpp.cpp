@@ -827,7 +827,6 @@ int main() {
     bool res = binary_search(vec.begin(), vec.end(), 8); 
  
  
- 
     // lower_bound function 
     // returns an iterator pointing to the first
     // element which is not less than x 
@@ -844,7 +843,6 @@ int main() {
     int ind = it - vec.begin();
  
     int ind =  lower_bound(vec.begin(), vec.end(), x) - vec.begin(); 
- 
  
  
     // upper bound 
