@@ -2,8 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-vector<long long> printFirstNegativeInteger(long long int arr[],
-                                             long long int n, long long int k);
+vector<long long> printFirstNegativeInteger(long long int arr[], long long int n, long long int k);
 
 // Driver program to test above functions
 int main() {
@@ -29,9 +28,7 @@ int main() {
 // } Driver Code Ends
 
 
-vector<long long> printFirstNegativeInteger(long long int A[],
-                                             long long int N, long long int K) {
-    
+vector<long long> printFirstNegativeInteger(long long int A[], long long int N, long long int K) {
     
     deque<long long> dq;
     vector<long long> ans;

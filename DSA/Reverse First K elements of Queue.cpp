@@ -48,7 +48,7 @@ queue<int> modifyQueue(queue<int> q, int k) {
     for(int i=0;i<k;i++){
         ans.push(s.pop());
     }
-    for(int i=k;i<size;i++){
+    for(int i=k;i<size();i++){
         ans.push(q[i]);
     }
     return ans;
