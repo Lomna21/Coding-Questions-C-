@@ -16,25 +16,17 @@ using namespace std;
 #define FOR_N(n,i) for(int i=n-1;i>=0;i--)
 #define FOR_AB(a,b) for(int i=a;i<b;i++)
 #define pi (3.141592653589)
-#define N_5 100005
-#define N_9 1000000009
-//------------------------------------------
-//Sorting vector pair according to second element
-// --> time complexity  O(N*logN)
-bool sorta(const pair<int,int> &a,const pair<int,int> &b){return (a.second < b.second);} //ascending
-bool sortd(const pair<int,int> &a,const pair<int,int> &b){return (a.second > b.second);} //descending
-//..........................................
-//Bits
-string decToBinary(int n){string s="";int i = 0;while (n > 0) {s =to_string(n % 2)+s;n = n / 2;i++;}return s;}
-int binaryToDecimal(string n){string num = n;int dec_value = 0;int base = 1;int len = num.length();for(int i = len - 1; i >= 0; i--){if (num[i] == '1')dec_value += base;base = base * 2;}return dec_value;}
-//..........................................
-//Check
-bool isPrime(int n){if(n<=1)return false;if(n<=3)return true;if(n%2==0||n%3==0)return false;for(int i=5;i*i<=n;i=i+6)if(n%i==0||n%(i+2)==0)return false;return true;}
-bool isPowerOfTwo(int n){if(n==0)return false;return (ceil(log2(n)) == floor(log2(n)));}
-bool isPerfectSquare(int x){if (x >= 0) {int sr = sqrt(x);return (sr * sr == x);}return false;}
-//..........................................
 void solve(){
-    
+    int n,k;
+    cin>>n>>k;
+    int ans = 1;
+    int rem = n-k;
+    if(rem<=1){
+        cout<<ans<<endl;
+    }
+    else{
+        cout<<n<<endl;
+    }
 }
 signed main(){
     fast;

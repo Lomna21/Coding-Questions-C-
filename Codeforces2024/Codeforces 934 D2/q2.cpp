@@ -34,7 +34,54 @@ bool isPowerOfTwo(int n){if(n==0)return false;return (ceil(log2(n)) == floor(log
 bool isPerfectSquare(int x){if (x >= 0) {int sr = sqrt(x);return (sr * sr == x);}return false;}
 //..........................................
 void solve(){
-    
+    int n,k;
+    cin>>n>>k;
+    int a[n],b[n];
+    map<int,int> m1,m2;
+    vector<int> v1,v2,ans;
+    vector<pair<int,int>> c1,c2;
+    for (int i = 0; i < n; i++){
+        cin>>a[i];
+        m1[a[i]]++;
+    }
+    for (int i = 0; i < n; i++){
+        cin>>b[i];
+        m2[b[i]]++;
+    }
+    for(auto x: m1){
+        c1.push_back({x.second,x.first});
+    }
+    for(auto x: m2){
+        c2.push_back({x.second,x.first});
+    }
+    sort(all(c1));
+    sort(all(c2));
+    for (int i = c1.size()-1; i>=0; i--){
+        if(c1[i].first==c2[i].first&&c1[i].first==2){
+            v1.push_back(c1[i].second);
+            v2.push_back(c2[i].second);
+            v1.push_back(c1[i].second);
+            v2.push_back(c2[i].second);
+            m1.erase(c1[i].second);
+            m2.erase(c2[i].second);
+        }
+    }
+    for (int i = 0; i < n; i++){
+        if(m2.find(a[i])!=m2.end()){
+            v1.push_back(a[i]);
+            v2.push_back(a[i]);
+            m2.erase(a[i]);
+        }
+    }
+    for (int i = 0; i < 2*k; i++){
+        cout<<v1[i]<<" ";
+    }
+    cout<<endl;
+     for (int i = 0; i < 2*k; i++){
+        cout<<v2[i]<<" ";
+    }
+    cout<<endl;
+ 
 }
 signed main(){
     fast;

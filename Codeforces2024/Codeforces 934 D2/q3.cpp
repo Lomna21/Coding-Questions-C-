@@ -34,7 +34,48 @@ bool isPowerOfTwo(int n){if(n==0)return false;return (ceil(log2(n)) == floor(log
 bool isPerfectSquare(int x){if (x >= 0) {int sr = sqrt(x);return (sr * sr == x);}return false;}
 //..........................................
 void solve(){
-    
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    sort(arr.begin(), arr.end());
+    vector<int> v;
+    // int hash[n];
+    map<int,int> m;
+    for (int i = 0; i < n; i++) {
+        m[arr[i]]++;
+        // if (i % 2 == 0) {
+        //     v.push_back(arr[i]);
+        // }
+    }
+    // sort(hash,hash+n);
+    for(int i=0;i<n;i++){
+        if(m[i]>=i+1){
+            continue;
+        }
+        else{
+            cout<<i<<endl;
+            return;
+        }
+    }
+
+    // for(int i=0;i<n;i++){
+    //     if(m[arr[i]]==1 && arr[i]!=0){
+    //         continue;
+    //     }
+    //     else{
+    //         v.push_back(arr[i]);
+    //     }
+    // }
+    int mex = 0;
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] == mex) {
+            mex++;
+        }
+    }
+    cout << mex << endl;
 }
 signed main(){
     fast;
