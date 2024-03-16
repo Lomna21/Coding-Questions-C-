@@ -34,7 +34,7 @@ bool isPowerOfTwo(int n){if(n==0)return false;return (ceil(log2(n)) == floor(log
 bool isPerfectSquare(int x){if (x >= 0) {int sr = sqrt(x);return (sr * sr == x);}return false;}
 //..........................................
 void solve(){
-
+    
 }
 signed main(){
     fast;
