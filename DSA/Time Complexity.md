@@ -1,18 +1,18 @@
 # Simple loop algorithm
-# for(i = 0; i <= n; i++){
+## for(i = 0; i <= n; i++){
     statements 
 } *T.C -> O(N)*
 
-# for (i = n; i <= 0; i--){
+## for (i = n; i <= 0; i--){
     statements
 }*T.C -> O(N)*
 
-# for (i = 0; i <= n; i=i+2){
+## for (i = 0; i <= n; i=i+2){
     statements
 } *T.C -> O(N)*
 
 > Consider a and b both are positive integers
-# while (a != b) {
+## while (a != b) {
     if (a > b)
         a = a - b;
     else
@@ -20,13 +20,13 @@
 }
 *Time complexity = O(1) in best case and O(max(a, b)) worst case.*
 
-# for(int i=0;i*i<n;i++)
+## for(int i=0;i*i<n;i++)
     cout<<"GeeksforGeeks";
 *Time complexity = O(√n).*
 
-# Multiple/Fractional loop algorithm
+## Multiple/Fractional loop algorithm
 
-# for (i = 1; i < n; i=i*2){
+## for (i = 1; i < n; i=i*2){
     statement # Some logic that the algorithm is performing.
 }
 Number of loops:   i:
@@ -44,7 +44,7 @@ We know that the value of i at the kth run was 2^k, so when the loop broke at i=
 Since k is the number of times the loop runs we need to find k to get the time complexity. We know that 2^k = n, now if we take log base 2 on either sides we get k = log2(n). *So we can now say that the loop runs log2(n) times.*
 
 # Multiple/Fractional loop algorithm
-# for (i = n; i < 1; i=i/2){
+## for (i = n; i < 1; i=i/2){
     statement # Some logic that the algorithm is performing.
 }
 This is exactly similar as the reverse loop we looked at in the previous section, so the number of times the loop will execute will also be log2(n) times. *Therefore the time complexity will be O(log2(n)).*
@@ -52,12 +52,12 @@ This is exactly similar as the reverse loop we looked at in the previous section
 **for i=i*3 ==> T.C = O(log3(N))**
 **for i=i/5 ==> T.C = O(log5(N))**
 
-# for (int i = 1; i < n; i = i * x) 
+## for (int i = 1; i < n; i = i * x) 
 //or for(int i = n; i >=1; i = i / x)
     cout << "GeeksforGeeks";
 *Time complexity = O(logxn).*
 
-# for (int i = 0; i < n / 2; i++)
+## for (int i = 0; i < n / 2; i++)
     for (int j = 1; j + n / 2 <= n; j++)
         for (int k = 1; k <= n; k = k * 2)
             cout << "GeeksforGeeks";
@@ -68,7 +68,7 @@ Time complexity of 3rd for loop = O(log2n)
 
 # Summation loop algorithm
 p = 0
-# for (i = 1; p <= n; i++){
+## for (i = 1; p <= n; i++){
     p = p + i# Some logic that the algorithm is performing.
 }
 i:                 p:
