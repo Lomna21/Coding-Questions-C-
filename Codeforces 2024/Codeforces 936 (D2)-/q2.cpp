@@ -17,8 +17,11 @@ using namespace std;
 #define FOR_AB(a,b) for(int i=a;i<b;i++)
 #define pi (3.141592653589)
 #define N_5 100005
-#define N_9 1000000009
 #define mod 1000000007
+//------------------------------------------
+// Mathematical functions
+int moduloMultiplication(int a,int b){int res = 0;a %= mod;while (b){if (b & 1)res = (res + a) % mod;b >>= 1;}return res;}
+int powermod(int x, int y, int p){int res = 1;x = x % p;if (x == 0) return 0;while (y > 0){if (y & 1)res = (res*x) % p;y = y>>1;x = (x*x) % p;}return res;}
 //------------------------------------------
 //Sorting vector pair according to second element
 // --> time complexity  O(N*logN)
@@ -35,41 +38,6 @@ bool isPowerOfTwo(int n){if(n==0)return false;return (ceil(log2(n)) == floor(log
 bool isPerfectSquare(int x){if (x >= 0) {int sr = sqrt(x);return (sr * sr == x);}return false;}
 //..........................................
 void solve(){
-    // int n,k;cin>>n>>k;
-    // int arr[n];
-    // for(int i=0;i<n;i++){
-    //     cin>>arr[i];
-    // }
-    // vector<int> pre_sum(n+1,0);
-    // int sum=0;
-    // for(int i=0;i<n;i++){
-    //     sum+=arr[i];
-    //     pre_sum[i+1]=sum;
-    //     // cout<<pre_sum[i+1]<<" ";
-    // }//nextline;
-    // // cout<<pre_sum[0]<<" "<<endl;
-    // int max=INT_MIN;
-    // int neg_index=0;
-    // bool check = false;
-    // for(int i=1;i<=n;i++){
-    //     if(pre_sum[i]<0){
-    //         neg_index=i;
-    //     }
-        
-    //     if(max<pre_sum[i]){
-    //         max=pre_sum[i]-pre_sum[neg_index];
-    //     }
-    // }
-    // if(max>=0){
-    //     int multiplier = pow(2,k);
-    //     int ans = (max*multiplier) % (1000000000+7);
-    //     cout<<ans<<endl;
-    // }
-    // else{
-    //     cout<<pre_sum[n]<<endl;
-    //     cout<<pre_sum[n] % (1000000000+7)<<endl;
-    // }
-
     int n,k,ans=0,sum=0,m=0;
     cin>>n>>k;
 	vector<int> v(n);
@@ -82,10 +50,23 @@ void solve(){
 		}
 		ans=max(ans,sum);
 	}
-	m=((m-ans)%mod+mod)%mod;
-	ans%=mod;
-    int val = pow(2,k);
-	cout<<(m+((val)%mod*ans)%mod)%mod<<endl;
+    if(m-ans<0){
+        m = (m-ans)%mod+mod;
+    }
+    else{
+        m = (m-ans)%mod;
+    }
+	ans=ans%mod;
+    int power = 1; 
+    int i=0;
+    int temp=k;
+    while(k-- && i<temp){
+        i++;
+        power = (power*2)%mod;
+
+    }
+    int result = (m + ((power%mod)*ans)%mod)%mod;
+    cout<<result<<endl;
 }
 signed main(){
     fast;

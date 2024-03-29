@@ -20,6 +20,8 @@ using namespace std;
 #define N_9 1000000009
 //------------------------------------------
 // Mathematical functions
+int moduloMultiplication(int a,int b,int mod){int res = 0;a %= mod;while (b){if (b & 1)res = (res + a) % mod;b >>= 1;}return res;}
+int powermod(int x, int y, int p){int res = 1;x = x % p;if (x == 0) return 0;while (y > 0){if (y & 1)res = (res*x) % p;y = y>>1;x = (x*x) % p;}return res;}
 //------------------------------------------
 //Sorting vector pair according to second element
 // --> time complexity  O(N*logN)
@@ -37,36 +39,37 @@ bool isPerfectSquare(int x){if (x >= 0) {int sr = sqrt(x);return (sr * sr == x);
 //..........................................
 void solve(){
     int a,b,c;
-    cin>>a>>b>>c;
-    int vertex_vacant = 1;
-    int height = 0;
-    int sub=1;
-    int count =0;
-    while(a>0){
-        vertex_vacant = sub*2;
-        height++;
-        if(a>=sub){
-            a=a-sub;
-        }
-        else{
-            count = sub-a;
-            vertex_vacant = count*2;
-        }
-        sub=sub*2;
-    }
-    while(b>0){
-        height++;
-        if(b>vertex_vacant){
-            b-=vertex_vacant;
-        }
-        else{
-            vertex_vacant-=b;
-        }
-        
-    }
-    if(c!=vertex_vacant){
-        cout<<-1<<endl;
-    }
+	cin>>a>>b>>c;
+	multiset<int>st;
+	for(int i=0;i<c;i++){
+		st.insert(0);
+	}
+	for(int i=0;i<b;i++){
+		if(st.empty()){
+			cout<<-1<<'\n';
+			return;
+		}
+		int x=*st.begin();
+		st.erase(st.begin());
+		st.insert(x+1);
+	}
+	for(int i=0;i<a;i++){
+		if(st.size()<2){
+			cout<<-1<<'\n';
+			return;
+		}
+		st.erase(st.begin());
+		int x=*st.begin();
+		st.erase(st.begin());
+		st.insert(x+1);
+ 
+	}
+	if(st.size()==1){
+		cout<<*st.begin()<<'\n';
+	}
+	else{
+		cout<<-1<<'\n';
+	}
 }
 signed main(){
     fast;
