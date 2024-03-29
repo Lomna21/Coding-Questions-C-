@@ -10,6 +10,7 @@ using namespace std;
 #define N_9 1000000009
 void solve(){
     int n;cin>>n;
+    int k;
     if(n==2){
         cout<<2<<endl;
         return;

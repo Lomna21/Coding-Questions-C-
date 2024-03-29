@@ -57,10 +57,10 @@ This is exactly similar as the reverse loop we looked at in the previous section
     cout << "GeeksforGeeks";
 *Time complexity = O(logxn).*
 
-## for (int i = 0; i < n / 2; i++)
-    for (int j = 1; j + n / 2 <= n; j++)
-        for (int k = 1; k <= n; k = k * 2)
-            cout << "GeeksforGeeks";
+## for (int i = 0; i < n / 2; i++) {
+##     for (int j = 1; j + n / 2 <= n; j++)
+##         for (int k = 1; k <= n; k = k * 2)
+                cout << "GeeksforGeeks";
 Time complexity of 1st for loop = O(n/2) ⇒ O(n).
 Time complexity of 2nd for loop = O(n/2) ⇒ O(n).
 Time complexity of 3rd for loop = O(log2n)
