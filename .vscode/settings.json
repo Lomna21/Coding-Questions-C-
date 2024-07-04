@@ -5,7 +5,9 @@
     "random": "cpp",
     "*.tcc": "cpp",
     "atomic": "cpp",
-    "list": "cpp"
+    "list": "cpp",
+    "valarray": "cpp",
+    "tuple": "cpp"
   },
   "C_Cpp.errorSquiggles": "enabled"
 }

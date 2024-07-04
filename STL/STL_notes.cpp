@@ -279,16 +279,7 @@ namespace raj{
     // Q1. find me the first index where the element X lies 
     // find function can be used but that takes O(N) times
     // the array is sorted.. 
- 
-    int n;
-    cin >> n;
-    int arr[n];
-    for(int i = 0;i<n;i++) {
-    	cin >> arr[i]; 
-    }
- 
-    int x; 
-    cin >> x; 
+
  
     // arr[] -> {1, 5, 7, 7, 8, 10, 10, 10, 11, 11, 12} 
     // find x = 7
