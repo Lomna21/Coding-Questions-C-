@@ -20,9 +20,6 @@
 // Note: destructor can also be called explicitly for an object.
 object_name.~class_name()
 
-// Can there be more than one destructor in a class?
-// No, there can only be one destructor in a class with a class name preceded by ~, no parameters, and no return type.
-
 // C++ program to demonstrate the number of times constructor and destructors are called
 #include <iostream>
 using namespace std;

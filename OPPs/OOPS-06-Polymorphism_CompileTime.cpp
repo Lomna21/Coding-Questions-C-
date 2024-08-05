@@ -26,12 +26,10 @@ public:
 
 	// Function with same name and 2 int parameters
 	void func(int x, int y){
-		cout << "value of x and y is " << x << ", " << y
-			<< endl;
+		cout << "value of x and y is " << x << ", " << y << endl;
 	}
 };
 
-// Driver code
 int main()
 {
 	Geeks obj1;
@@ -82,7 +80,36 @@ public:
 		res.imag = imag + obj.imag;
 		return res;
 	}
+
+	Complex operator-(){
+		Complex temp;
+		temp.real = -real;
+		temp.imag = -imag;
+	}
+
 	void print() { cout << real << " + i" << imag << endl; }
+};
+
+class Integer {
+	private :
+		int x;
+	public :
+		void setData (int a){
+			x=a;
+		}
+		void showData(){
+			cout<<"x"<<x;
+		}
+		Integer operator++(){		  // Pre Increment
+			Integer i;
+			i.x = ++x;
+			return i;
+		}
+		Integer operator++(int){      // Post Increment
+			Integer i;
+			i.x = x++;
+			return i;
+		}
 };
 
 // Driver code
@@ -90,8 +117,21 @@ int main(){
 	Complex c1(10, 5), c2(2, 4);
 
 	// An example call to "operator+"
-	Complex c3 = c1 + c2;
+	// Binary operator overloading
+	Complex c3 = c1 + c2; //  Works as --> c3 = c1.operator+(c2);
 	c3.print();
+
+	// Unary operator overloading
+	Complex c4 =-c1;     // Works as --> c2 = c1.operator-();
+	
+	Integer i1,i2,i3,i4;
+	i1.setData(3);
+	i2 = i1++;          // Works as i2 = i1.operator++(); 
+
+	i3.setData(6);
+	i4=++i3;			// Works as i4 = i3.operator++();
+
+	
 }
 
 
