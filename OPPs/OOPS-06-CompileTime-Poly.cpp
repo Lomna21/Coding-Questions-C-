@@ -4,7 +4,7 @@
 //     2. Operator overloading 
 
 // b. Runtime Polymorphism
-//     1. Virtual Function
+//     1. Virtual Function (Method overriding)
 
 // A. FUNCTION OVERLOADING
 // When there are multiple functions with the same name but different parameters, then the functions are said to be overloaded, hence this is known as Function Overloading. Functions can be overloaded by changing the number of arguments or/and changing the type of arguments. In simple terms, it is a feature of object-oriented programming providing many functions that have the same name but distinct parameters when numerous tasks are listed under one function name.
