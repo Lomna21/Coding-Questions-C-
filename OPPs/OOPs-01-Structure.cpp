@@ -7,7 +7,7 @@ class Complex{
     private :
         int a,b;
     public :
-        // This is the member function we have declared inside it inside the class, but we can also declare member function outside the class.
+        // This is the member function we have declared it inside the class, but we can also declare member function outside the class.
         void set_data(int x, int y){  // member function inside the class.
             a = x;
             b = y;
@@ -15,7 +15,7 @@ class Complex{
         void show_data();// For declaring member function outside the class we need to define it inside the class.        
 };
 
-void Complex::show_data(){ // for declaration outside the class we need to add 'MEMBERSHIP LABEL' in front of the function name.
+void Complex::show_data(){ // For defining outside the class we need to add 'MEMBERSHIP LABEL' in front of the function name.
     cout<<" "<<a<<" "<<b;
 }
 

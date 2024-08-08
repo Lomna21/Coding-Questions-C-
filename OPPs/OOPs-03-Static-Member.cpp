@@ -40,7 +40,7 @@ class Account {
         }
 }; 
 
-// --> Declaration: The static member is declared inside the class with the static keyword. This declaration informs the compiler of the variable's type and name.
+// --> Declaration: The static member variable is declared inside the class with the static keyword. This declaration informs the compiler of the variable's type and name.
 // --> Definition: A static member variable must be defined outside the class definition. This is because the declaration inside the class merely tells the compiler that the class has a static member variable.
 float Account:: roi = 3.5;
 

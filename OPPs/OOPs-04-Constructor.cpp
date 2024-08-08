@@ -129,7 +129,7 @@ public:
     }
 
 	// copy constructor
-	Sample(Sample &t){   //
+	Sample(Sample &t){  
         id = t.id; 
     }
 	
