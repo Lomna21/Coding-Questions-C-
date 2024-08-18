@@ -20,7 +20,7 @@
 }
 *Time complexity = O(1) in best case and O(max(a, b)) worst case.*
 
-## for(int i=0;i*i<n;i++)
+## for(int i=0; i*i < n; i++)
     cout<<"GeeksforGeeks";
 *Time complexity = O(√n).*
 
@@ -89,14 +89,25 @@ Since k is the number of times the loop runs we need to find k to get the time c
 
 # Worst Case time complexity of different data structures for different operations
 
-Data structure	    Access	    Search	    Insertion	    Deletion
-Array	            O(1)	    O(N)	    O(N)	        O(N)
-Stack	            O(N)	    O(N)	    O(1)	        O(1)
-Queue	            O(N)	    O(N)	    O(1)	        O(1)
-Singly Linked list	O(N)	    O(N)	    O(N)	        O(N)
-Doubly Linked List	O(N)	    O(N)	    O(1)	        O(1)
-Hash Table	O(N)	O(N)	    O(N)	    O(N)
-Binary Search Tree	O(N)	    O(N)	    O(N)	        O(N)
-AVL Tree	        O(log N)	O(log N)	O(log N)	    O(log N)
-Binary Tree	        O(N)	    O(N)	    O(N)	        O(N)
-Red Black Tree	    O(log N)	O(log N)	O(log N)	    O(log N)
+Data structure	            Access	    Search	    Insertion	    Deletion
+Array	                    O(1)	    O(N)	    O(N)	        O(N)
+Stack	                    O(N)	    O(N)	    O(1)	        O(1)
+Queue	                    O(N)	    O(N)	    O(1)	        O(1)
+Singly Linked list	        O(N)	    O(N)	    O(N)	        O(N)
+Doubly Linked List	        O(N)	    O(N)	    O(1)	        O(1)
+Hash Table	O(N)	        O(N)	    O(N)	    O(N)
+Binary Search Tree	        O(N)	    O(N)	    O(N)	        O(N)
+AVL Tree	                O(log N)	O(log N)	O(log N)	    O(log N)
+Binary Tree	                O(N)	    O(N)	    O(N)	        O(N)
+Red Black Tree	            O(log N)	O(log N)	O(log N)	    O(log N)
+
+
+
+Algorithm	                 Time Complexity	                   Space Complexity
+ 	                Best	        Average	        Worst	            Worst
+Selection Sort	    O(n2)	        O(n2)	        O(n2)	            O(1)
+Bubble Sort	        O(n)	        O(n2)	        O(n2)	            O(1)
+Insertion Sort	    O(n)	        O(n2)	        O(n2)	            O(1)
+Heap Sort	        O(n log(n))	    O(n log(n))	    O(n log(n))	        O(1)
+Quick Sort	        O(n log(n))	    O(n log(n))	    O(n2)	            O(n)
+Merge Sort	        O(n log(n))	    O(n log(n))	    O(n log(n))	        O(n)

@@ -3,8 +3,8 @@
 // It must be defined outside the class to which it is friend.
 // Friend function can access any member of the class to which it is friend (private, public, protected --> can access all).
 // Friend function cannot access members of the class directly.
-// It has no caller object.
-// It should bot be define with membership label.
+// It has no caller object. We call it like normal functions
+// It should not be define with membership label.
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -38,8 +38,8 @@ class A{
     private:
         int a;
     public:
-    void setData(int x){ a=x; }
-    friend void fun(A,B);
+        void setData(int x){ a=x; }
+        friend void fun(A,B);
 };
 class B{
     private:

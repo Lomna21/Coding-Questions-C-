@@ -1,4 +1,4 @@
-// THIS POINTER
+// ---------------THIS POINTER---------------------
 
 // Each object gets its own copy of data members and all objects share a single copy of member functions.
 // Then now question is that if only one copy of each member function exists and is used by multiple objects, how are the proper data members are accessed and updated?
@@ -64,7 +64,7 @@ delete this;
 
 
 
-// Static Memory Allocation (SAM)
+// -------------Static Memory Allocation (SAM)---------------
 // 1. Static Memory is allocated for declared variables by the compiler. The address can be found using the address of operator and can be assigned to a pointer. The memory is allocated during compile time. 
 // 2. It uses stack for managing the static allocation of memory
 // 3. In this memory allocation scheme, we cannot reuse the unused memory.
@@ -73,7 +73,7 @@ int x;
 float y;
 Complex c2;
 
-// Dynamic Memory Allocation (DMA)
+// --------------Dynamic Memory Allocation (DMA)---------------
 // 1. Memory allocation done at the time of execution(run time) is known as dynamic memory allocation. Functions calloc() and malloc() support allocating dynamic memory. 
 // 2. It uses heap (not heap data structure) of memory for managing the dynamic allocation of memory.
 // 3. This allows reusing the memory. The user can allocate more memory when required. Also, the user can release the memory when the user needs it.
