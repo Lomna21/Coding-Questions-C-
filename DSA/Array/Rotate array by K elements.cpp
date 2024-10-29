@@ -16,7 +16,7 @@
 
 #include <iostream>
 using namespace std;
-void Rotatetoright(int arr[], int n, int k)
+void RotateToRight(int arr[], int n, int k)
 {
   if (n == 0)
     return;

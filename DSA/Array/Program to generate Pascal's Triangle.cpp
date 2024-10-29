@@ -10,11 +10,12 @@ using namespace std;
 
 int nCr(int n, int r) {
     long long res = 1;
-
+    int it = r;
     // calculating nCr:
-    for (int i = 0; i < r; i++) {
+    for (int i = 0; i < it; i++) {
         res = res * (n - i);
         res = res / (i + 1);
+        
     }
     return (int)(res);
 }
@@ -23,10 +24,17 @@ vector<vector<int>> pascalTriangle(int n) {
     vector<vector<int>> ans;
 
     //Store the entire pascal's triangle:
-    for (int row = 1; row <= n; row++) {
+    // for (int row = 1; row <= n; row++) {
+    //     vector<int> tempLst; // temporary list
+    //     for (int col = 1; col <= row; col++) {
+    //         tempLst.push_back(nCr(row - 1, col - 1));
+    //     }
+    //     ans.push_back(tempLst);
+    // }
+    for (int row = 0; row < n; row++) {
         vector<int> tempLst; // temporary list
-        for (int col = 1; col <= row; col++) {
-            tempLst.push_back(nCr(row - 1, col - 1));
+        for (int col = 0; col <= row; col++) {
+            tempLst.push_back(nCr(row , col ));
         }
         ans.push_back(tempLst);
     }
@@ -41,7 +49,7 @@ int main()
         for (auto ele : it) {
             cout << ele << " ";
         }
-        cout << "n";
+        cout << "\n";
     }
     return 0;
 }

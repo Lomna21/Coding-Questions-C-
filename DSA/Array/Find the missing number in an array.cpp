@@ -7,7 +7,7 @@
 // Space Complexity: O(N), Here we are using an extra hash array of size N+1.
 
 // ------------------Optimal Approach 1--------------------
-// Intuition:We know that the summation of the first N numbers is (N*(N+1))/2. We can say this S1. Now, in the given array, every number between 1 to N except one number is present. So, if we add the numbers of the array (say S2), the difference between S1 and S2 will be the missing number. Because, while adding all the numbers of the array, we did not add that particular number that is missing.
+// Intuition: We know that the summation of the first N numbers is (N*(N+1))/2. We can say this S1. Now, in the given array, every number between 1 to N except one number is present. So, if we add the numbers of the array (say S2), the difference between S1 and S2 will be the missing number. Because, while adding all the numbers of the array, we did not add that particular number that is missing.
 
 // Time Complexity: O(N), where N = size of array+1.
 // Space Complexity: O(1) as we are not using any extra space.

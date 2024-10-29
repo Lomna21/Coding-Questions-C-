@@ -66,7 +66,7 @@ int main(){
 
 
 class A{
-    *vptr;
+    // *vptr;
     public:
         void f1( ) {   }
         virtual void f2( ) {   }
@@ -159,3 +159,77 @@ int main() {
     return 0;
 }
 // The code then attempts to safely cast ptr to Derived* using dynamic_cast and calls accessArray() on the resulting pointer. If ptr does not actually point to a Derived object, dynamic_cast will return nullptr, and attempting to dereference nullptr would result in a runtime error (specifically, a segmentation fault or access violation).
+
+
+ // Why we need virtual function, as object of drived class can access all the member function of parent class and can also access it own function. So we are complexing this by making virtual functions in derived class.--> If we have to make a function for all classes with common functionality outside the class in which it will be accessing the common member function of the classes. Than we can't do it without using virtual class otherwise we have to make each class specific functions which is not efficient way to do. That's why we need virtual function.
+#include<bits/stdc++.h>
+using namespace std;
+
+class shape{
+    protected : // count can't be private cause we can't access private members of a class in derived class
+        static int count;
+    public :
+    virtual void print(){
+        cout<<count <<" : shape"<<endl;
+        count++;
+    }
+};
+int shape::count = 1;
+
+class circle : public shape{
+    public :
+        void print(){
+            cout<<count <<" : circle"<<endl;
+            count++; 
+
+        }
+};
+class triangle : public shape{
+    public :
+        void print(){
+            cout<<count <<" : triangle"<<endl;
+            count++; 
+        }
+};
+class oval : public circle{
+    public :
+        void print(){
+            cout<<count <<" : Oval"<<endl;
+            count++; 
+        }
+};
+void func(shape* obj){  // By using a base class pointer (shape*), func() can handle objects of different derived types (circle, triangle, oval), and it will call the appropriate print() method for each object because print() is declared as virtual in the base class.
+    obj->print();
+}
+
+int main(){
+    shape obj_shape;
+    obj_shape.print();  // 1 : shape
+
+    circle obj_circle;
+    obj_circle.print();  // 2 : circle
+
+    triangle obj_triangle;
+    obj_triangle.print();  // 3 : triangle
+
+    shape * obj_shape2 = &obj_circle;
+    obj_shape2->print();   // 4 : circle
+
+    obj_shape2->shape::print(); // 5 : shape
+    // obj_shape2->circle::print(); // error: 'circle' is not a base of 'shape'
+
+    shape *obj_shape3 = &obj_circle;
+    func(obj_shape3);   // 6 : circle
+
+    shape *obj_shape4;
+    obj_shape4 = &obj_triangle;
+    func(obj_shape4);  // 7 : triangle
+
+    oval obj_oval;
+    circle *obj_circle2 = &obj_oval;  // Possible ambiguity in the memory layout
+    func(obj_circle2);  // 8 : Oval
+
+    shape* obj_shape5 = &obj_oval;  // Correct, because 'oval' is derived from 'shape'
+    func(obj_shape5);  // 9 : Oval
+    
+}
